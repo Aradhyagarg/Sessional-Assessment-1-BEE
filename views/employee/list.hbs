@@ -1,0 +1,32 @@
+<h3><a class="btn btn-dark" href="/"><i class="fa fa-plus"></i> Create New</a> ORDER LISTS</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+             <th>Item</th>
+            <th>Payment</th>
+            <th>Mobile</th>
+            <th>City</th>
+            <th>Grand Total</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.fullName}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.item}}</td>
+            <td>{{this.payment}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.city}}</td>
+            <td>{{this.total}}</td>
+            <td>
+                <a href="/update/{{this._id}}"><i class="fa fa-pencil fa-lg text-dark" aria-hidden="true"></i></a>
+                <a href="/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg text-danger" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
